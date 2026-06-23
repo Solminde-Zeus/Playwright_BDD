@@ -1,25 +1,34 @@
-# BDD Playwright + Cucumber — Day 1
+# BDD Playwright + Cucumber — Day 2
 
-> QA Automation Training Part 3 · Day 1: BDD Basics & Feature Implementation
+> QA Automation Training Part 3 · Day 2: Advanced BDD, DataTables, Hooks, Reports & Debugging
 
 ---
 
 ## Project Structure
 
 ```
-bdd-day01/
+bdd-day02/
 ├── features/
-│   └── login.feature          # Gherkin scenarios (TC_001–TC_004 + Outline)
+│   ├── login.feature          # TC_001–TC_004 + Scenario Outline (carried from Day 1)
+│   └── form.feature           # TC_005–TC_007 + DataTable + Scenario Outline
 ├── step-definitions/
-│   └── loginSteps.ts          # Step bindings for login feature
+│   ├── loginSteps.ts          # Login step bindings
+│   └── formSteps.ts           # Form step bindings (DataTable handling)
 ├── pages/
-│   └── LoginPage.ts           # Page Object for login UI
+│   ├── LoginPage.ts           # Login Page Object
+│   └── FormPage.ts            # Form Page Object
 ├── fixtures/
-│   └── hooks.ts               # Before / After hooks (browser lifecycle + screenshots)
+│   └── hooks.ts               # Before/After (browser, tracing, video, screenshots)
 ├── utils/
-│   └── world.ts               # CustomWorld — shared state between steps
+│   └── world.ts               # CustomWorld extends World
 ├── reports/                   # Auto-generated (gitignored)
-├── cucumber.json              # Cucumber runner config
+│   ├── cucumber-report.html
+│   ├── cucumber-report.json
+│   ├── screenshots/
+│   ├── traces/
+│   └── videos/
+├── DEBUGGING.md               # 8 failure cases + 3 timeout simulations
+├── cucumber.json
 ├── tsconfig.json
 └── package.json
 ```
@@ -40,57 +49,82 @@ npx playwright install chromium
 | Command | Description |
 |---|---|
 | `npm test` | Run all scenarios |
-| `npm run test:report` | Run + generate HTML report |
-| `npm run test:tags -- --tags @smoke` | Run by tag |
+| `npm run test:login` | Login feature only |
+| `npm run test:form` | Form feature only |
+| `npm run test:report` | Run + generate HTML + JSON reports |
+| `npm run test:tags -- --tags "@smoke"` | Run by tag |
 
 ---
 
-## Test Coverage (Day 1)
+## View Trace
 
-| Test Case ID | Scenario | Type |
-|---|---|---|
-| TC_001 | Successful login with valid credentials | Basic Scenario |
-| TC_002 | Invalid login attempt | Basic Scenario |
-| TC_003 | Error message visibility on empty credentials | Basic Scenario |
-| TC_004 | Logout functionality | Basic Scenario |
-| TC_OUT_01 | Login with `admin / admin123` → success | Scenario Outline |
-| TC_OUT_02 | Login with `admin / wrong123` → failure | Scenario Outline |
+```bash
+npx playwright show-trace reports/traces/<scenario-name>.zip
+```
 
 ---
 
-## Application Under Test
+## Test Coverage
+
+| ID | Scenario | Feature | Type |
+|---|---|---|---|
+| TC_001 | Valid login | Login | Scenario |
+| TC_002 | Invalid login | Login | Scenario |
+| TC_003 | Empty credentials error | Login | Scenario |
+| TC_004 | Logout | Login | Scenario |
+| TC_OUT | Login with multiple creds | Login | Scenario Outline |
+| TC_005 | Submit form — name + email | Form | DataTable |
+| TC_006 | Submit form — name only | Form | DataTable |
+| TC_007 | Submit form — all fields | Form | DataTable |
+| TC_OUT2 | Form with parameterised data | Form | Scenario Outline |
+
+---
+
+## Applications Under Test
 
 | App | URL |
 |---|---|
 | Login | https://the-internet.herokuapp.com/login |
-
-**Valid credentials:** `tomsmith` / `SuperSecretPassword!`
+| Form | https://demoqa.com/text-box |
 
 ---
 
 ## Architecture
 
 ```
-Feature File (.feature)
-      │  Gherkin steps
+Feature Files (.feature)
+      │  Gherkin (Given/When/Then + DataTable)
       ▼
-Step Definitions (loginSteps.ts)
-      │  calls methods on
+Step Definitions
+      │  calls methods on Page Objects only
       ▼
-Page Objects (LoginPage.ts)
-      │  uses Playwright Page API
+Page Objects (LoginPage, FormPage)
+      │  Playwright Page API
       ▼
-Browser (Chromium via Playwright)
+Browser (Chromium)
 
 Hooks (fixtures/hooks.ts)
-  Before → launch browser, init page objects
-  After  → screenshot on failure, close browser
+  Before → launch browser, start tracing, record video, init page objects
+  After  → stop trace, screenshot on failure, close browser
 ```
 
-### Key Rules (same as Part 1 & 2)
-- **No hardcoded waits** — all synchronisation via Playwright's auto-wait
-- **No variables in step definitions** — only method calls on page objects
-- **All selectors** live exclusively in the Page Object class
-- **World object** is the only shared state between steps
+### Rules
+- No hardcoded waits anywhere
+- No logic or variables in step definitions — only method calls
+- All selectors live only in Page Object classes
+- `CustomWorld extends World` — required for `this.attach()`
 
 ---
+
+## Reports Location
+
+```
+reports/
+├── cucumber-report.html   ← open in browser
+├── cucumber-report.json   ← machine-readable
+├── screenshots/           ← auto on failure
+├── traces/                ← view with playwright show-trace
+└── videos/                ← mp4 per scenario
+```
+
+See `DEBUGGING.md` for 8 documented failure cases and 3 timeout simulations.

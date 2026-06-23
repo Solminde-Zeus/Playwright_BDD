@@ -1,20 +1,21 @@
 {
-  "name": "bdd-playwright-cucumber",
+  "name": "bdd-playwright-cucumber-day2",
   "version": "1.0.0",
-  "description": "BDD Automation with Playwright & Cucumber – Day 1",
+  "description": "BDD Automation with Playwright & Cucumber – Day 2",
   "scripts": {
     "test": "cucumber-js",
+    "test:login": "cucumber-js features/login.feature",
+    "test:form": "cucumber-js features/form.feature",
     "test:tags": "cucumber-js --tags",
-    "test:report": "cucumber-js --format html:reports/cucumber-report.html"
+    "test:report": "cucumber-js --format html:reports/cucumber-report.html --format json:reports/cucumber-report.json"
   },
   "dependencies": {
     "@cucumber/cucumber": "^10.3.2",
+    "@playwright/test": "^1.44.0",
     "playwright": "^1.44.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.61.0",
     "@types/node": "^20.0.0",
-    "playwright-bdd": "^9.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }

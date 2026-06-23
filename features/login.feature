@@ -36,6 +36,6 @@ Feature: Login Functionality
     Then login result should be "<result>"
 
     Examples:
-      | username | password | result  |
-      | tomsmith | SuperSecretPassword! | success |
-      | admin    | wrong123 | failure |
+      | username  | password             | result  |
+      | tomsmith  | SuperSecretPassword! | success |
+      | tomsmith  | wrongpassword        | failure |

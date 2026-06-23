@@ -2,17 +2,9 @@ import { Given, When, Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 import { CustomWorld } from "../utils/world";
 
-// ---------------------------------------------------------------------------
-// Given
-// ---------------------------------------------------------------------------
-
 Given("user is on login page", async function (this: CustomWorld) {
   await this.loginPage.navigate();
 });
-
-// ---------------------------------------------------------------------------
-// When
-// ---------------------------------------------------------------------------
 
 When(
   "user enters valid username and password",
@@ -29,26 +21,19 @@ When(
 );
 
 When(
-  'user enters {string} and {string}',
+  "user enters {string} and {string}",
   async function (this: CustomWorld, username: string, password: string) {
     await this.loginPage.loginWith(username, password);
   }
 );
 
 When("clicks on login button", async function (this: CustomWorld) {
-  // Login button click is already done inside loginWith* helpers.
-  // This step exists to match the feature syntax when the credentials
-  // step only fills fields (e.g. future refactor). Currently a no-op
-  // because loginWithValidCredentials already clicks submit.
+  // Handled inside loginWith* helpers — no-op step kept for Gherkin readability
 });
 
 When("user clicks logout", async function (this: CustomWorld) {
   await this.loginPage.clickLogout();
 });
-
-// ---------------------------------------------------------------------------
-// Then
-// ---------------------------------------------------------------------------
 
 Then(
   "user should be navigated to dashboard",
@@ -65,7 +50,7 @@ Then(
 );
 
 Then(
-  'login result should be {string}',
+  "login result should be {string}",
   async function (this: CustomWorld, expectedResult: string) {
     const actualResult = await this.loginPage.getLoginResult();
     expect(actualResult).toBe(expectedResult);

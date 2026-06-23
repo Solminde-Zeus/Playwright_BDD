@@ -1,5 +1,487 @@
 [
   {
+    "description": "  As a user of the application\n  I want to fill and submit forms\n  So that my data is saved successfully",
+    "elements": [
+      {
+        "description": "",
+        "id": "form-submission;submit-form-with-all-valid-fields",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Submit form with all valid fields",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 264318499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "user is on form page",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8394306000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "field",
+                      "value"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "name",
+                      "JAyesh Solminde"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "email",
+                      "zeuslearning@yeppe.com"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 11,
+            "name": "user fills the form with following data:",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 150596999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "form should be submitted successfully",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21022100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 174968000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "form-submission;submit-form-with-name-only",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Submit form with name only",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 213930400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "user is on form page",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5600762099
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "field",
+                      "value"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "name",
+                      "Jayesh Solminde"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 19,
+            "name": "user fills the form with following data:",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 115226700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "form should be submitted successfully",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14611199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 230104400
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "form-submission;submit-form-with-all-fields",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "Submit form with all fields",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 206167300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "user is on form page",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5348713299
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "field",
+                      "value"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "name",
+                      "Jayesh Solminde"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "email",
+                      "zeuslearning@yepe.com"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "currentAddress",
+                      "lower Parel West"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "permanentAddress",
+                      "Virar West"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 26,
+            "name": "user fills the form with following data:",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 197721600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "form should be submitted successfully",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17544200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 197670099
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "form-submission;submit-form-with-parameterised-data",
+        "keyword": "Scenario Outline",
+        "line": 40,
+        "name": "Submit form with parameterised data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 194157499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "user is on form page",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9689120200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "user fills the form with name \"Jayesh Solminde\" and email \"zeuslearning@yeppe.com\"",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 135932799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "form submission result should be \"success\"",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10325199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 397476000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "form-submission;submit-form-with-parameterised-data",
+        "keyword": "Scenario Outline",
+        "line": 41,
+        "name": "Submit form with parameterised data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 202954599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "user is on form page",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7019305599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "user fills the form with name \"Solminde Jayesh\" and email \"zeuslearning@yepe.com\"",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 132232700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "form submission result should be \"success\"",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10164499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 265314099
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "form-submission;submit-form-with-parameterised-data",
+        "keyword": "Scenario Outline",
+        "line": 42,
+        "name": "Submit form with parameterised data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 205827199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "user is on form page",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5568972299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "user fills the form with name \"\" and email \"mumbaizeus@yeppe.com\"",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 131728600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "form submission result should be \"success\"",
+            "match": {
+              "location": "step-definitions\\formSteps.ts:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10346100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 208550999
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "form-submission",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Form Submission",
+    "tags": [],
+    "uri": "features\\form.feature"
+  },
+  {
     "description": "  As a user of the application\n  I want to be able to log in and log out\n  So that I can access secured areas of the site",
     "elements": [
       {
@@ -14,7 +496,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 277300800
+              "duration": 194541300
             }
           },
           {
@@ -23,11 +505,11 @@
             "line": 7,
             "name": "user is on login page",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:9"
+              "location": "step-definitions\\loginSteps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 3237202699
+              "duration": 5820975000
             }
           },
           {
@@ -36,11 +518,11 @@
             "line": 11,
             "name": "user enters valid username and password",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:17"
+              "location": "step-definitions\\loginSteps.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 654780100
+              "duration": 850292200
             }
           },
           {
@@ -49,11 +531,11 @@
             "line": 12,
             "name": "clicks on login button",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:38"
+              "location": "step-definitions\\loginSteps.ts:30"
             },
             "result": {
               "status": "passed",
-              "duration": 189699
+              "duration": 250899
             }
           },
           {
@@ -62,11 +544,11 @@
             "line": 13,
             "name": "user should be navigated to dashboard",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:53"
+              "location": "step-definitions\\loginSteps.ts:38"
             },
             "result": {
               "status": "passed",
-              "duration": 56285799
+              "duration": 78374900
             }
           },
           {
@@ -74,7 +556,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 61742099
+              "duration": 184331900
             }
           }
         ],
@@ -93,7 +575,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 179178800
+              "duration": 185138899
             }
           },
           {
@@ -102,11 +584,11 @@
             "line": 7,
             "name": "user is on login page",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:9"
+              "location": "step-definitions\\loginSteps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 3148889299
+              "duration": 6796721799
             }
           },
           {
@@ -115,11 +597,11 @@
             "line": 17,
             "name": "user enters invalid credentials",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:24"
+              "location": "step-definitions\\loginSteps.ts:16"
             },
             "result": {
               "status": "passed",
-              "duration": 581165900
+              "duration": 968055099
             }
           },
           {
@@ -128,11 +610,11 @@
             "line": 18,
             "name": "error message should be displayed",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:60"
+              "location": "step-definitions\\loginSteps.ts:45"
             },
             "result": {
               "status": "passed",
-              "duration": 36093300
+              "duration": 28827700
             }
           },
           {
@@ -140,7 +622,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 61634399
+              "duration": 186327399
             }
           }
         ],
@@ -159,7 +641,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 194658899
+              "duration": 200353799
             }
           },
           {
@@ -168,11 +650,11 @@
             "line": 7,
             "name": "user is on login page",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:9"
+              "location": "step-definitions\\loginSteps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 5732859899
+              "duration": 9738752100
             }
           },
           {
@@ -181,11 +663,11 @@
             "line": 22,
             "name": "user enters \"\" and \"\"",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:31"
+              "location": "step-definitions\\loginSteps.ts:23"
             },
             "result": {
               "status": "passed",
-              "duration": 584766199
+              "duration": 1008127300
             }
           },
           {
@@ -194,11 +676,11 @@
             "line": 23,
             "name": "login result should be \"failure\"",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:67"
+              "location": "step-definitions\\loginSteps.ts:52"
             },
             "result": {
               "status": "passed",
-              "duration": 33841199
+              "duration": 22962599
             }
           },
           {
@@ -207,11 +689,11 @@
             "line": 24,
             "name": "error message should be displayed",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:60"
+              "location": "step-definitions\\loginSteps.ts:45"
             },
             "result": {
               "status": "passed",
-              "duration": 9488099
+              "duration": 9963900
             }
           },
           {
@@ -219,7 +701,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 60839899
+              "duration": 197708799
             }
           }
         ],
@@ -238,7 +720,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 278654000
+              "duration": 203014799
             }
           },
           {
@@ -247,11 +729,11 @@
             "line": 7,
             "name": "user is on login page",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:9"
+              "location": "step-definitions\\loginSteps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 16884375400
+              "duration": 10993173699
             }
           },
           {
@@ -260,11 +742,11 @@
             "line": 28,
             "name": "user enters valid username and password",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:17"
+              "location": "step-definitions\\loginSteps.ts:9"
             },
             "result": {
               "status": "passed",
-              "duration": 815255900
+              "duration": 746514600
             }
           },
           {
@@ -273,11 +755,11 @@
             "line": 29,
             "name": "clicks on login button",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:38"
+              "location": "step-definitions\\loginSteps.ts:30"
             },
             "result": {
               "status": "passed",
-              "duration": 153600
+              "duration": 156199
             }
           },
           {
@@ -286,11 +768,11 @@
             "line": 30,
             "name": "user should be navigated to dashboard",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:53"
+              "location": "step-definitions\\loginSteps.ts:38"
             },
             "result": {
               "status": "passed",
-              "duration": 49683099
+              "duration": 36182099
             }
           },
           {
@@ -299,11 +781,11 @@
             "line": 31,
             "name": "user clicks logout",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:45"
+              "location": "step-definitions\\loginSteps.ts:34"
             },
             "result": {
               "status": "passed",
-              "duration": 832725200
+              "duration": 760701900
             }
           },
           {
@@ -312,11 +794,11 @@
             "line": 32,
             "name": "user should be redirected to login page",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:75"
+              "location": "step-definitions\\loginSteps.ts:60"
             },
             "result": {
               "status": "passed",
-              "duration": 67597900
+              "duration": 20825400
             }
           },
           {
@@ -324,7 +806,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 64068000
+              "duration": 184816000
             }
           }
         ],
@@ -343,7 +825,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 221364600
+              "duration": 194817799
             }
           },
           {
@@ -352,11 +834,11 @@
             "line": 7,
             "name": "user is on login page",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:9"
+              "location": "step-definitions\\loginSteps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 17136440399
+              "duration": 20514235899
             }
           },
           {
@@ -365,11 +847,11 @@
             "line": 35,
             "name": "user enters \"tomsmith\" and \"SuperSecretPassword!\"",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:31"
+              "location": "step-definitions\\loginSteps.ts:23"
             },
             "result": {
               "status": "passed",
-              "duration": 748643700
+              "duration": 638280599
             }
           },
           {
@@ -378,11 +860,11 @@
             "line": 36,
             "name": "login result should be \"success\"",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:67"
+              "location": "step-definitions\\loginSteps.ts:52"
             },
             "result": {
               "status": "passed",
-              "duration": 1370499
+              "duration": 907800
             }
           },
           {
@@ -390,7 +872,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 80810299
+              "duration": 578383900
             }
           }
         ],
@@ -409,7 +891,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 192077899
+              "duration": 201407800
             }
           },
           {
@@ -418,24 +900,24 @@
             "line": 7,
             "name": "user is on login page",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:9"
+              "location": "step-definitions\\loginSteps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 18450274499
+              "duration": 4648732100
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 35,
-            "name": "user enters \"admin\" and \"wrong123\"",
+            "name": "user enters \"tomsmith\" and \"wrongpassword\"",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:31"
+              "location": "step-definitions\\loginSteps.ts:23"
             },
             "result": {
               "status": "passed",
-              "duration": 814280799
+              "duration": 642232300
             }
           },
           {
@@ -444,11 +926,11 @@
             "line": 36,
             "name": "login result should be \"failure\"",
             "match": {
-              "location": "step-definitions\\loginSteps.ts:67"
+              "location": "step-definitions\\loginSteps.ts:52"
             },
             "result": {
               "status": "passed",
-              "duration": 29711000
+              "duration": 20060899
             }
           },
           {
@@ -456,7 +938,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 55212400
+              "duration": 196901500
             }
           }
         ],
