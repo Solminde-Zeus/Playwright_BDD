@@ -1,0 +1,21 @@
+{
+  "name": "bdd-playwright-cucumber",
+  "version": "1.0.0",
+  "description": "BDD Automation with Playwright & Cucumber – Day 1",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:tags": "cucumber-js --tags",
+    "test:report": "cucumber-js --format html:reports/cucumber-report.html"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.3.2",
+    "playwright": "^1.44.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "@types/node": "^20.0.0",
+    "playwright-bdd": "^9.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
