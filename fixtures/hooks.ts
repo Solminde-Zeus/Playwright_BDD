@@ -11,16 +11,8 @@ import { LoginPage } from "../pages/LoginPage";
 import { FormPage } from "../pages/FormPage";
 import * as fs from "fs";
 import * as path from "path";
-
-// ---------------------------------------------------------------------------
-// World & timeout
-// ---------------------------------------------------------------------------
 setWorldConstructor(CustomWorld);
 setDefaultTimeout(30_000);
-
-// ---------------------------------------------------------------------------
-// Before — launch browser, enable tracing, init page objects
-// ---------------------------------------------------------------------------
 Before(async function (this: CustomWorld) {
   this.browser = await chromium.launch({ headless: true });
 
@@ -39,9 +31,6 @@ Before(async function (this: CustomWorld) {
   this.formPage = new FormPage(this.page);
 });
 
-// ---------------------------------------------------------------------------
-// After — save trace, screenshot on failure, close browser
-// ---------------------------------------------------------------------------
 After(async function (
   this: CustomWorld,
   scenario: ITestCaseHookParameter

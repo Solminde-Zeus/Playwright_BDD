@@ -115,16 +115,3 @@ Hooks (fixtures/hooks.ts)
 - `CustomWorld extends World` — required for `this.attach()`
 
 ---
-
-## Reports Location
-
-```
-reports/
-├── cucumber-report.html   ← open in browser
-├── cucumber-report.json   ← machine-readable
-├── screenshots/           ← auto on failure
-├── traces/                ← view with playwright show-trace
-└── videos/                ← mp4 per scenario
-```
-
-See `DEBUGGING.md` for 8 documented failure cases and 3 timeout simulations.

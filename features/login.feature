@@ -38,4 +38,4 @@ Feature: Login Functionality
     Examples:
       | username  | password             | result  |
       | tomsmith  | SuperSecretPassword! | success |
-      | tomsmith  | wrongpassword        | failure |
+      | tomsmith  | JayeshSolminde        | failure |
