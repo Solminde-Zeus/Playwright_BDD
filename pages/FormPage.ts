@@ -16,11 +16,14 @@ export class FormPage {
     this.page = page;
   }
 // Goto function
-  async navigate(): Promise<void> {
+  async navigate(): Promise<void> 
+  {
     await this.page.goto("https://demoqa.com/text-box");
   }
 
-  async fillField(field: string, value: string): Promise<void> {
+
+  async fillField(field: string, value: string): Promise<void> 
+  {
     const locatorMap: Record<string, string> = {
       name: this.nameInput,
       email: this.emailInput,
@@ -33,23 +36,33 @@ export class FormPage {
     }
   }
 
-  async fillName(name: string): Promise<void> {
+
+  async fillName(name: string): Promise<void> 
+  {
     await this.page.fill(this.nameInput, name);
   }
 
-  async fillEmail(email: string): Promise<void> {
+
+  async fillEmail(email: string): Promise<void> 
+  {
     await this.page.fill(this.emailInput, email);
   }
 
-  async clickSubmit(): Promise<void> {
+
+  async clickSubmit(): Promise<void> 
+  {
     await this.page.click(this.submitButton);
   }
 
-  async assertFormSubmittedSuccessfully(): Promise<void> {
+
+  async assertFormSubmittedSuccessfully(): Promise<void> 
+  {
     await expect(this.page.locator("#output")).toBeVisible();
   }
 
-  async getSubmissionResult(): Promise<string> {
+  
+  async getSubmissionResult(): Promise<string> 
+  {
     const outputVisible = await this.page
       .locator("#output")
       .isVisible()
