@@ -1,7 +1,8 @@
+//import all required files
 import { Given, When, Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 import { CustomWorld } from "../utils/world";
-
+// Background WOrk
 Given("user is on login page", async function (this: CustomWorld) {
   await this.loginPage.navigate();
 });
@@ -28,7 +29,6 @@ When(
 );
 
 When("clicks on login button", async function (this: CustomWorld) {
-  // Handled inside loginWith* helpers — no-op step kept for Gherkin readability
 });
 
 When("user clicks logout", async function (this: CustomWorld) {

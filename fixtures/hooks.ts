@@ -1,22 +1,26 @@
 import {
-  Before,
-  After,
-  setWorldConstructor,
-  setDefaultTimeout,
-  ITestCaseHookParameter,
+  Before, // Before teh test
+  After, // After the test
+  setWorldConstructor, // building a custom world
+  setDefaultTimeout, // setting a default time
+  ITestCaseHookParameter, //setting hoooks
 } from "@cucumber/cucumber";
 import { chromium } from "playwright";
 import { CustomWorld } from "../utils/world";
 import { LoginPage } from "../pages/LoginPage";
 import { FormPage } from "../pages/FormPage";
-import * as fs from "fs";
-import * as path from "path";
+import * as fs from "fs"; //file system
+import * as path from "path"; // path
+
+
 setWorldConstructor(CustomWorld);
 setDefaultTimeout(30_000);
-Before(async function (this: CustomWorld) {
-  this.browser = await chromium.launch({ headless: true });
 
-  this.context = await this.browser.newContext({
+//Here is what happens before the code even starts
+Before(async function (this: CustomWorld) {
+  this.browser = await chromium.launch({ headless: false }); // headless means the no pop up of the browser 
+
+  this.context = await this.browser.newContext({ // Record the screen
     viewport: { width: 1280, height: 720 },
     recordVideo: { dir: "reports/videos/" },
   });
@@ -30,7 +34,7 @@ Before(async function (this: CustomWorld) {
   this.loginPage = new LoginPage(this.page);
   this.formPage = new FormPage(this.page);
 });
-
+// What happens after the files are been tested positive or negative doest mind
 After(async function (
   this: CustomWorld,
   scenario: ITestCaseHookParameter
@@ -45,7 +49,7 @@ After(async function (
   });
 
   // Screenshot on failure
-  if (scenario.result?.status === "FAILED") {
+  if (scenario.result?.status === "FAILED") { // If failed take a ss
     const screenshotsDir = path.resolve("reports/screenshots");
     if (!fs.existsSync(screenshotsDir))
       fs.mkdirSync(screenshotsDir, { recursive: true });

@@ -6,7 +6,7 @@ Feature: Form Submission
   Background:
     Given user is on form page
 
-  # TC_005
+  # TC_005 Here we are putting only 2 data
   Scenario: Submit form with all valid fields
     When user fills the form with following data:
       | field | value          |
@@ -14,14 +14,14 @@ Feature: Form Submission
       | email | zeuslearning@yeppe.com  |
     Then form should be submitted successfully
 
-  # TC_006
+  # TC_006 HEre we are putting only 1 data
   Scenario: Submit form with name only
     When user fills the form with following data:
       | field | value     |
       | name  | Jayesh Solminde |
     Then form should be submitted successfully
 
-  # TC_007
+  # TC_007 Here we are filling all the data
   Scenario: Submit form with all fields
     When user fills the form with following data:
       | field        | value             |

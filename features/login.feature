@@ -6,24 +6,24 @@ Feature: Login Functionality
   Background:
     Given user is on login page
 
-  # TC_001
+  # TC_001 proper login
   Scenario: Successful login with valid credentials
     When user enters valid username and password
     And clicks on login button
     Then user should be navigated to dashboard
 
-  # TC_002
+  # TC_002 wornd=g password
   Scenario: Invalid login attempt
     When user enters invalid credentials
     Then error message should be displayed
 
-  # TC_003
+  # TC_003 emty it is
   Scenario: Verify error message visibility on empty credentials
     When user enters "" and ""
     Then login result should be "failure"
     And error message should be displayed
 
-  # TC_004
+  # TC_004 when login it should logout
   Scenario: Verify logout functionality
     When user enters valid username and password
     And clicks on login button

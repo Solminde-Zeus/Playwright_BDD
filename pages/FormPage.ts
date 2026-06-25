@@ -3,7 +3,7 @@ import { Page, expect } from "@playwright/test";
 export class FormPage {
   private page: Page;
 
-  // Locators
+  //Al Locators
   private readonly nameInput = "#userName";
   private readonly emailInput = "#userEmail";
   private readonly currentAddressInput = "#currentAddress";
@@ -15,7 +15,7 @@ export class FormPage {
   constructor(page: Page) {
     this.page = page;
   }
-
+// Goto function
   async navigate(): Promise<void> {
     await this.page.goto("https://demoqa.com/text-box");
   }

@@ -10,7 +10,8 @@ When(
   "user fills the form with following data:",
   async function (this: CustomWorld, dataTable: DataTable) {
     const rows = dataTable.rowsHash(); // { field: value, field: value }
-    for (const [field, value] of Object.entries(rows)) {
+    for (const [field, value] of Object.entries(rows))
+    {
       await this.formPage.fillField(field, value);
     }
     await this.formPage.clickSubmit();
