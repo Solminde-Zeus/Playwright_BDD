@@ -9,7 +9,7 @@ export class LoginPage {
   private readonly errorMessage = "#flash";
   private readonly logoutButton = ".button.secondary.radius";
 
-  
+
   constructor(page: Page) {
     this.page = page;
   }
@@ -66,7 +66,6 @@ export class LoginPage {
       "https://the-internet.herokuapp.com/login"
     );
   }
-
 
   async getLoginResult(): Promise<string> 
   {
